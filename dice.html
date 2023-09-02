@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <title>Dice</title>
+</head>
+<body>
+
+    <div class="container pt-3">
+        <h1>DICE</h1>
+        <div class="container pt-3 pb-3">
+            <p>
+               Welcome to my coding class. This tutorial for Javascript begineer. 
+            </p>
+        <span id="show"> <img src="/lesson/images/dice-roll.gif" alt="" srcset="" style="width:15%; border:1px solid"></span>
+       </div>
+        <button id="dice" class=" btn btn-success">TOSS THE DICE</button>
+    </div>
+    
+</body>
+
+<script>
+ const dice = document.getElementById('dice');
+ const show = document.getElementById('show');
+ dice.addEventListener('click', function(){
+     const result = Math.floor(Math.random() * 6) + 1;
+
+     if(result == 1){
+            show.innerHTML ='<img src="/lesson/images/dice1.png" alt="" srcset="">';
+
+     }
+     else if(result == 2){
+        show.innerHTML ='<img src="/lesson/images/dice2.png" alt="" srcset="">';        
+
+     }
+     else if(result == 3){
+        show.innerHTML ='<img src="/lesson/images/dice3.png" alt="" srcset="">';        
+
+     }
+     else if(result == 4){
+        show.innerHTML ='<img src="/lesson/images/dice4.png" alt="" srcset="">';        
+
+     }
+     else if(result == 5){
+        show.innerHTML ='<img src="/lesson/images/dice5.png" alt="" srcset="">';        
+
+     }
+     else if(result == 6){
+        show.innerHTML ='<img src="/lesson/images/dice6.png" alt="" srcset="">';        
+
+     }
+
+ 
+
+ })
+</script>
+
+</html>
