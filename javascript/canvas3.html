@@ -33,6 +33,7 @@
     const ctx = canvas.getContext('2d');
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
+    let speed= 0;
 
 function saverestore(){
     ctx.beginPath();
@@ -44,16 +45,18 @@ function saverestore(){
 
 }
 
-function spin(){
-    
+
+function changecolors(){    
     ctx.beginPath();
-    ctx.moveTo(1000,200);
-    ctx.lineTo(800,400);
-    ctx.lineTo(1200,500);
+    ctx.moveTo(1000,500);
+    ctx.lineTo(800,Math.random()*1000);
+    ctx.lineTo(1200,Math.random()*1000);
     ctx.closePath();
     ctx.fillStyle=randomizeColorCode();
     ctx.fill();
- 
+   setTimeout(()=>{
+    requestAnimationFrame(changecolors());
+   },1000)
 }
 
 function randomizeColorCode() {
@@ -66,7 +69,7 @@ function randomizeColorCode() {
 }
 
 saverestore();
-spin();
+changecolors();
 
 
   
