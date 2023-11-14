@@ -6,24 +6,33 @@
     <title>Canva 1</title>
 </head>
 <body>
-    <canvas id="mycanvas" width="1200" height="800" style="border:1px solid"></canvas>
+    <canvas id="mycanvas" width="1500" height="800" style="border:1px solid"></canvas>
     
 </body>
 <script>
     const canvas = document.getElementById('mycanvas');
     const ctx = canvas.getContext('2d');
 
-    //drawing a polygon
+    //drawing a kunaii
+      ctx.beginPath();
+      ctx.moveTo(150, 10);
+      ctx.lineTo(180, 150);
+      ctx.lineTo(150, 290);
+      ctx.lineTo(120, 150);
+      ctx.closePath();
+      ctx.fillStyle = '#333'; // Color of the shuriken
+      ctx.fill();
+      ctx.stroke();
+
+    //drawing a polygon and coloring it
     ctx.beginPath();
-    ctx.moveTo(100,100);
-    ctx.lineTo(200,200);
-    ctx.lineTo(300,400);
-    ctx.lineTo(400,200);
-    ctx.lineTo(500,100);
+    ctx.moveTo(800,100);
+    ctx.lineTo(1000,300);
+    ctx.lineTo(1200,100);
     ctx.closePath();
-    ctx.stroke();
+    ctx.fillStyle='red';
+    ctx.fill();
 
-
-
+  
 </script>
 </html>
