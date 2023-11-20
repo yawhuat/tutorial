@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<style>
+    canvas{
+        border: 1px solid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <canvas class="img-fluid" id="mycanvas"></canvas>  
+    </div>
+   
+    
+</body>
+<script>
+
+   
+const canvas = document.getElementById('mycanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    let rotation = 0;
+
+    const scenery3 = new Image();
+    scenery3.src = '../images/scenery3.jpg';
+    scenery3.onload = function(){
+        ctx.drawImage(scenery3,0,0);
+    }
+    
+    const scenery2 = new Image();
+    scenery2.src = '../images/scenery2.jpg';
+    scenery2.onload = function(){
+        ctx.drawImage(scenery2,400,400);
+    }
+
+    const scenery4 = new Image();
+    scenery4.src = '../images/scenery4.jpg';
+    scenery4.onload = function(){
+        ctx.drawImage(scenery4,0,350);
+    }
+    const scenery5 = new Image();
+    scenery4.src = '../images/scenery4.jpg';
+    scenery4.onload = function(){
+        ctx.drawImage(scenery4,700,50);
+    }
+
+    ctx.translate(200,-100);
+    ctx.rotate(20*Math.PI/180);
+   
+
+</script>
+</html>
