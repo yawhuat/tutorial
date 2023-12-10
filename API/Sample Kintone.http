@@ -1,0 +1,58 @@
+@subdomain = // Input your domain    Ex) xyz.kintone.com
+@apiToken =  // Input your API Token Ex) iQUqhcxPcM0wuoHXU9MagUbmJOBBIgxjZt1RMVVw
+@appId =     // Input your App Id    Ex) 5
+@recordId =  // Input your Record Id Ex) 36
+
+### GET/record - NG
+GET https://{{subdomain}}/k/v1/record.json?app={{appId}}&id={{recordId}}
+X-Cybozu-API-Token: 'iQUqhcxPcM0wuoHXU9MagUbmJOBBIgxjZt1RMVVw'
+
+### GET/record - OK
+GET https://{{subdomain}}/k/v1/record.json?app={{appId}}&id={{recordId}}
+X-Cybozu-API-Token: {{apiToken}}
+
+### kintone REST API Request Examples using json
+### GET/record
+GET https://{{subdomain}}/k/v1/record.json
+X-Cybozu-API-Token: {{apiToken}}
+Content-Type: application/json
+
+{
+  "app":{{appId}},
+  "id":{{recordId}}
+}
+
+### PUT/record
+PUT https://{{subdomain}}/k/v1/record.json
+X-Cybozu-API-Token: {{apiToken}}
+Content-Type: application/json
+
+{
+  "app": {{appId}},
+  "id": {{recordId}},
+  "record": {
+    "Text":{
+      "value": "DEF"
+    },
+    "Number":{
+      "value": "456"
+    }
+  }
+}
+
+### POST/record
+POST https://{{subdomain}}/k/v1/record.json
+X-Cybozu-API-Token: {{apiToken}}
+Content-Type: application/json
+
+{
+  "app": {{appId}},
+  "record": {
+    "Text":{
+      "value": "ABC"
+    },
+    "Number":{
+      "value": "123"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetching from Kintone</title>
+</head>
+<body>
+  HI There
+  
+</body>
+<script>
+let xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.open('GET', 'https://00rbjolsv6wc.kintone.com/k/v1/record.json?app=5&id=36');
+xhr.setRequestHeader("X-Cybozu-API-Token","jWMxsIJNFeFi1klUn3eTby6RLU1b71doFSBOiayS");
+xhr.onload = function() {
+  console.log(xhr.response);
+};
+
+xhr.send();
+</script>
+</html>
