@@ -1,0 +1,24 @@
+body{
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    background-color: antiquewhite;
+    
+}
+
+.quote{
+   font-size: 45px;
+   text-align: center;
+}
+
+.myrow{
+    padding: 10px;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: yellow;
+}
+
+.whatsapp{
+    right:5%;
+    top:85%;
+    position:fixed
+}
