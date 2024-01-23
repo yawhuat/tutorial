@@ -133,4 +133,11 @@
     padding: 10px;
     border-radius: 10px;    
 }
+
+.whatsappfloat{
+    top:80%;
+    right:4%;
+    position:fixed;
+    float:right;
+}
   

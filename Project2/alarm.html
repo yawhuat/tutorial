@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="alarm.css">
+</head>
+<body>
+ <div class="mybox">
+   <div class="clock" id="clock"><span>Please Wait</span></div>
+ </div>
+ <audio id="myAudio">
+  <source src="japanmusic.wav" type="audio/mpeg">
+</audio>
+ <div class="setalarm btn btn-outline-primary" id="setalarm">Set Alarm</div>
+ <div class="selecttime btn btn-outline-primary" id="selecttime">
+  <input id='alarminput' type='time' name='alarmtime'> 
+ </div>
+</body>
+<script>
+   
+   let today;
+   let alarmtime;
+   let todaytime;
+   let triggered=0;
+   const myAudio = document.getElementById('myAudio');
+   const setalarm = document.querySelector('#setalarm');
+   const alarminput= document.getElementById('alarminput');
+   const selecttime = document.getElementById('selecttime');
+
+
+   alarminput.addEventListener('change',()=>{
+    alarmtime = alarminput.value;
+    myAudio.volume = 0.1;
+    myAudio.play();
+   })
+   
+   setalarm.addEventListener('click',()=>{
+   selecttime.style.visibility='visible';
+   })
+
+   let loop = setInterval(()=>{
+    today = new Date();
+    let clock = document.querySelector('#clock');
+    clock.innerHTML = `${today.getHours()}: ${today.getMinutes()}: ${today.getSeconds()}`;
+    todaytime = `${today.getHours()}:${today.getMinutes()}`;
+
+    if (today.getHours()<10 && today.getMinutes()<10){
+      clock.innerHTML = `${today.getHours()}: 0${today.getMinutes()}: ${today.getSeconds()}`;
+      todaytime = `0${today.getHours()}:0${today.getMinutes()}`;
+    }
+       
+    if(today.getHours()<10 && today.getMinutes()>10  ){
+      todaytime = `0${today.getHours()}:${today.getMinutes()}`;
+    }
+
+    if(today.getHours()>10 &&  today.getMinutes()<10  ){
+      todaytime = `${today.getHours()}:0${today.getMinutes()}`;
+    }
+
+
+    if(todaytime == alarmtime && triggered == 0){
+      triggered = 1;
+      alarm();
+    }
+
+ 
+
+
+   },500)
+
+   async function alarm(){
+    console.log('1st Promise');
+    myAudio.play();
+    myAudio.volume = 0.5;
+
+    for(x = 1;x <4; x++){
+    let promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve(),5000*x)
+    });
+    await promise;
+    console.log('Promise');
+    myAudio.volume = 0.3*x;
+  
+    }
+
+   }
+
+    
+
+ 
+
+
+
+
+   
+  
+</script>
+</html>
