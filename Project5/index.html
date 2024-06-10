@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display all Information in Console using Javascript</title>
+</head>
+<body>
+    <p>
+        Thi is a lesson for Javascript
+    </p>
+    
+</body>
+</html>
+
+<script>
+    console.log('I am active');
+
+    let friends = [
+        {
+            name:'John Doe',
+            height: '180cm',
+            occupation:'Serial Killer',
+            nationality: 'Congo',
+            married: 'Yes'
+
+        },
+
+        {
+            name:'Karina',
+            height: '170cm',
+            occupation:'Dancer',
+            nationality: 'Vietnam',
+            married: 'No'
+
+        },
+        {
+            name:'Patricia Kolosky',
+            height: '185cm',
+            occupation:'Match Maker',
+            nationality: 'United States Ameria',
+            married: 'Yes'
+        },
+
+        {
+            name:'Natasha',
+            height: '156cm',
+            occupation:'Wrestle',
+            nationality: 'Malaysia',
+            married: 'No'
+        }
+    ]
+
+// for of loop(list down all the json as objects)
+
+for( friendsof  of friends){
+    console.log(friendsof.name + ' ' + friendsof.nationality);
+};
+
+
+
+
+</script>
