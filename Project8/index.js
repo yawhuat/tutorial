@@ -60,7 +60,11 @@ let maids =[
 
 let tbody = document.getElementById('tbody');
 let selectmaid = document.getElementsByClassName('selectmaid');
+let hiremaid = document.getElementById('hiremaid');
+let total= document.getElementById('total');
+let print = document.getElementById('print');
 let info ="";
+let totalsalary = [];
 let mymaid = [];
 
 
@@ -94,30 +98,38 @@ for(let i=0;i<selectmaid.length;i++){
         if(e.target.checked){
 
             mymaid.push(e.target.value); // to push the value into an array
-            console.log(mymaid);
+            hiremaid.innerHTML = `<span> ${mymaid}</span></br>`;
+
+            totalsalary.push(maids[i].salary); // to push the value of the salary into array
+        
+
+            
         }
         else{
            let position =  mymaid.indexOf(e.target.value);
-            console.log(e.target.value);
-            console.log(position); // to determine the position of an array
-            console.log('New Array produced')
-            mymaid.splice(position,1);
-            console.log(mymaid);
+            mymaid.splice(position,1);                  // remove the value from array
+            hiremaid.innerHTML = `<span> ${mymaid}</span></br>`;
+
+            totalsalary.splice(position,1); // remov the salary from the array
+
+            if(mymaid.length == 0){
+                hiremaid.innerHTML = 'No Maid Selected';
+            }
         }
+
+        let sumsalary = 0;
+        for(let i=0;i<totalsalary.length;++i){
+            sumsalary = sumsalary + totalsalary[i]; 
+        }
+        console.log(sumsalary);
+        total.value = sumsalary;
+        
 
 
     });
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
+print.addEventListener('click',()=>{
+    console.log('You are printing');
+    window.print();
+})

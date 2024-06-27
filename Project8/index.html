@@ -108,9 +108,48 @@
       <h1 class="is-size-4 has-text-weight-bold">Maids Hired For 4 hours</h1>
     </div>
     <div class="container pt-3">
-      <p class="hire maid">
-        <span>Hannah</span>
-      </p>
+      <h2 class="has-text-weight-bold is-size-5"  id="hiremaid">
+        Currently No Maid Selected
+      </h2>
+    </div>
+    <div class="container pt-3">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="e.g Alex Smith">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Address</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="e.g. alexsmith@gmail.com">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+  
+      <br>
+      <div class="field">
+        <label class="label is-size-5">Total Need to Pay</label>
+        <div class="control">
+          <input id="total" class="input" type="number" value=0 readonly>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="control">
+        <button class="button is-primary" id="print">Print This Form</button>
+      </div>
+      <br><br>
+
     </div>
     
 </body>
